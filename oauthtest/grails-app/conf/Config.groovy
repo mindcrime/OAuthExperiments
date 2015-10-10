@@ -89,3 +89,21 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.example.fogbeam.oauth.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.example.fogbeam.oauth.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.example.fogbeam.oauth.Role'
+grails.plugin.springsecurity.requestMap.className = 'com.example.fogbeam.oauth.RequestMap'
+grails.plugin.springsecurity.securityConfigType = 'Requestmap'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
+
